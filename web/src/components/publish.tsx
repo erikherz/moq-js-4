@@ -386,8 +386,8 @@ function Device(props: {
 			.getDisplayMedia({
 				audio: {
 					channelCount: {
-						ideal: 2,
-						max: 2,
+						ideal: 1,
+						max: 1,
 					},
 					sampleRate: { ideal: 48_000 },
 				},
@@ -415,8 +415,8 @@ function Device(props: {
 					? false
 					: {
 							channelCount: {
-								ideal: 2,
-								max: 2,
+								ideal: 1,
+								max: 1,
 							},
 							sampleRate: { ideal: 48_000 },
 							deviceId: audioDeviceId(),
