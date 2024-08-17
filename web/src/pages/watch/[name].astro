@@ -1,4 +1,10 @@
 ---
 export const prerender = false
+const { name } = Astro.params
+if (!name) return Astro.redirect("/404")
+import Watch from "@/components/watch.tsx"
 import Layout from "@/layouts/global.astro"
 ---
+<Layout title={`Watch - ${name}`}>
+        <Watch name={name} client:only />
+</Layout>
