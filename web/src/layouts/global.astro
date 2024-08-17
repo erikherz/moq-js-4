@@ -1,31 +1,24 @@
 ---
 import "./global.css"
-// NOTE: This is magically used as the type for Astro.props
-interface Props {
-	title: string
-	frontmatter?: {
-		title: string
-	}
-}
 let { title, frontmatter } = Astro.props
 if (frontmatter && frontmatter.title) title = frontmatter.title
 ---
 <!doctype html>
 <html lang="en" class="bg-slate-900 text-slate-100">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Vivoh Earth" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/home/favicon.jpg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Vivoh Earth</title>
-	</head>
-	<body>
-                   <center>
-                        <img src="/home/vivoh.png" className="h-32" style={{ maxHeight: '50px' }} alt="Vivoh" /> 
-                   </center>
-			<article class="markdown">
-				<slot />
-			</article>
-	</body>
+        <head>
+                <meta charset="UTF-8" />
+                <meta name="description" content="Vivoh Earth - Media over QUIC Streaming Network " />
+                <meta name="viewport" content="width=device-width" />
+                <link rel="icon" type="image/png" href="/home/favicon.png" />
+                <meta name="generator" content={Astro.generator} />
+                <title>Vivoh Earth</title>
+        </head>
+        <body>
+     <img src="/home/vivoh.png" className="h-32" style={{ maxHeight: '50px' }} alt="Vivoh" />
+                <div class="flex flex-col md:flex-row gap-8 md:p-8 p-4">
+                        <article class="markdown">
+                                <slot />
+                        </article>
+                </div>
+        </body>
 </html>
